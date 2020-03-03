@@ -11,3 +11,4 @@
 
 ### cd back to projects base directory and run
 `npm start`
+### and head over to http://localhost:(port) default is 9999
