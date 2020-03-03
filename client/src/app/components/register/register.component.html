@@ -1,0 +1,33 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <div class="fadeIn first">
+            <img src="https://picsum.photos/100" id="icon" alt="User Icon" />
+        </div>
+
+        <form [formGroup]="registerForm">
+            <input type="text" formControlName="userName" class="fadeIn second" name="username" placeholder="Username">
+            <div class="errors" *ngIf="registerForm.get('userName').invalid && (registerForm.get('userName').dirty || registerForm.get('userName').touched)">
+                <span *ngIf="registerForm.get('userName').errors.required">user name is required</span>
+            </div>
+            <input type="text" formControlName="firstName" class="fadeIn second" name="firstName" placeholder="First Name">
+            <div class="errors" *ngIf="registerForm.get('firstName').invalid && (registerForm.get('firstName').dirty || registerForm.get('firstName').touched)">
+                <span *ngIf="registerForm.get('firstName').errors.required">first Name is required</span>
+            </div>
+            <input type="text" formControlName="lastName" class="fadeIn second" name="lastName" placeholder="Last Name">
+            <div class="errors" *ngIf="registerForm.get('lastName').invalid && (registerForm.get('lastName').dirty || registerForm.get('lastName').touched)">
+                <span *ngIf="registerForm.get('lastName').errors.required">Last Name is required</span>
+            </div>
+            <input type="text" formControlName="email" class="fadeIn second" name="email" placeholder="email">
+            <div class="errors" *ngIf="registerForm.get('firstName').invalid && (registerForm.get('firstName').dirty || registerForm.get('firstName').touched)">
+                <span *ngIf="registerForm.get('firstName').errors.required">Email is required</span>
+                <span *ngIf="registerForm.get('email').errors.pattern">Email not valid</span>
+            </div>
+            <input type="password" formControlName="password" class="fadeIn third" name="password" placeholder="password">
+            <div class="errors" *ngIf="registerForm.get('password').invalid && (registerForm.get('password').dirty || registerForm.get('password').touched)">
+                <span *ngIf="registerForm.get('password').errors.required">Password is required</span>
+            </div>
+            <input type="button" class="fadeIn fourth" value="Register" [disabled]="registerForm.invalid" (click)="submitForm()">
+        </form>
+
+    </div>
+</div>

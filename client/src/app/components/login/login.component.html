@@ -1,0 +1,20 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <div class="fadeIn first">
+            <img src="https://picsum.photos/100" id="icon" alt="User Icon" />
+        </div>
+        <form [formGroup]="loginForm">
+            <input type="text" formControlName="email" class="fadeIn second" name="email" placeholder="email" required>
+            <div class="errors" *ngIf="loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+                <span *ngIf="loginForm.get('email').errors.required">Email is required</span>
+                <span *ngIf="loginForm.get('email').errors.pattern">Email not valid</span>
+            </div>
+            <input type="password" formControlName="password" class="fadeIn third" name="password" placeholder="password">
+            <div class="errors" *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+                <span *ngIf="loginForm.get('password').errors.required">password is required</span>
+            </div>
+            <input type="button" class="fadeIn fourth" value="Log In" [disabled]="loginForm.invalid" (click)="submitForm()">
+        </form>
+
+    </div>
+</div>

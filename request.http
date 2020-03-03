@@ -1,0 +1,22 @@
+### Request
+POST http://0.0.0.0:9999/login
+Content-Type: application/json
+
+{
+    "email": "goldysuryan87@gmail.com",
+    "password": "goldy"
+}
+
+
+### 
+POST http://0.0.0.0:9999/register
+Content-Type: application/json
+
+{
+    "email": "goldysuryan87@gmail.com",
+    "password": "goldy"
+}
+
+### 
+GET http://0.0.0.0:9999
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Z29sZHlzdXJ5YW44N0BnbWFpbC5jb20.xj8DtylBPigjvOttEWH6CcfshbVrlSyVJv-jbqHVulk
