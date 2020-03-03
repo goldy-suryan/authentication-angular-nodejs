@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'client/dist/client')));
 app.use(registerRoute);
 app.use(loginRoute);
 app.get('*', (req, res) => {
-    res.sendFile('index.html');
+    res.sendFile(__dirname, 'index.html');
 })
 
 
